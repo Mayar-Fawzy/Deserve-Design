@@ -419,12 +419,82 @@
 }
 
 .form-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236B7280'%3E%3Cpath fill-rule='evenodd' d='M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z' clip-rule='evenodd' /%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 20px;
-  padding-right: 40px;
+  background-image: none;
+  padding-left: 44px;
+  padding-right: 44px;
   cursor: pointer;
+}
+
+/* ── Custom select wrapper ── */
+.select-wrap {
+  position: relative;
+}
+
+.select-icon-left {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 1;
+  transition: color 0.22s ease;
+}
+
+.select-chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: transform 0.22s ease, color 0.22s ease;
+}
+
+.select-wrap:focus-within .select-icon-left,
+.select-wrap:focus-within .select-chevron {
+  color: #D91E24;
+}
+
+.select-wrap:focus-within .select-chevron {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* ── Date input wrapper ── */
+.date-input-wrap {
+  position: relative;
+}
+
+.date-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 1;
+  transition: color 0.22s ease;
+}
+
+.date-input-wrap:focus-within .date-icon {
+  color: #D91E24;
+}
+
+.date-input {
+  padding-left: 44px;
+  cursor: pointer;
+  color-scheme: light dark;
+
+  &::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 44px;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
 }
 
 .error-msg {

@@ -7,22 +7,34 @@
   background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  border-radius: 0 0 18px 18px;
   border-top: 2px solid #D91E24;
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.06);
-  transition: all 0.3s ease;
-  height: 72px;
+  border-bottom: 1px solid rgba(217, 30, 36, 0.15);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.05),
+    0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 
   &.scrolled {
-    box-shadow: 0 2px 24px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.06);
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.1),
+      0 16px 48px rgba(0, 0, 0, 0.12);
+    border-bottom-color: rgba(217, 30, 36, 0.25);
   }
 }
 
 .dark .navbar {
-  box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 4px 24px rgba(0,0,0,0.4);
+  border-top-color: #D91E24;
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 8px 40px rgba(0, 0, 0, 0.45);
 
   &.scrolled {
-    box-shadow: 0 2px 32px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.05);
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.5),
+      0 16px 56px rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -30,7 +42,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
-  height: 100%;
+ height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -243,8 +255,7 @@
   transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
   opacity: 0;
   background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(217, 30, 36, 0.12);
 
   @media (max-width: 768px) {
     display: block;

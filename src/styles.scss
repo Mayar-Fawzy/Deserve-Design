@@ -307,10 +307,6 @@ body[dir='rtl'] .footer-info {
   text-align: right;
 }
 
-body[dir='rtl'] .footer-info li {
-  flex-direction: row-reverse;
-}
-
 body[dir='rtl'] .footer-logo-wrap {
   flex-direction: row-reverse;
 }
@@ -318,4 +314,43 @@ body[dir='rtl'] .footer-logo-wrap {
 body[dir='rtl'] .footer-brand-name {
   align-items: flex-end;
   text-align: right;
+}
+
+body[dir='rtl'] .footer-tagline,
+body[dir='rtl'] .footer-desc {
+  text-align: right;
+}
+
+body[dir='rtl'] .footer-bottom-inner {
+  flex-direction: row-reverse;
+}
+
+body[dir='rtl'] .footer-bottom-inner p {
+  text-align: right;
+}
+
+/* ── RTL: contact form select & date wrappers ── */
+body[dir='rtl'] .select-icon-left {
+  left: auto;
+  right: 14px;
+}
+
+body[dir='rtl'] .select-chevron {
+  right: auto;
+  left: 14px;
+}
+
+body[dir='rtl'] .select-wrap .form-select {
+  padding-left: 44px;
+  padding-right: 44px;
+}
+
+body[dir='rtl'] .date-icon {
+  left: auto;
+  right: 14px;
+}
+
+body[dir='rtl'] .date-input {
+  padding-left: 16px;
+  padding-right: 44px;
 }
