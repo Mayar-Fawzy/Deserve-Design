@@ -1,0 +1,183 @@
+{
+  "nav": {
+    "home": "Home",
+    "works": "Works",
+    "service": "Service",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "headline": "Transform Your Space Into Your Dream Design",
+    "subheadline": "Professional interior design and renovation services — from concept to key-in-hand delivery",
+    "cta_primary": "View Our Works",
+    "cta_secondary": "Get Free Consultation",
+    "badge": "Premium Interior Design",
+    "stat_projects": "Projects",
+    "stat_years": "Years",
+    "stat_clients": "Clients"
+  },
+  "services_preview": {
+    "title": "What We Do",
+    "subtitle": "Complete interior design solutions tailored to your vision",
+    "design": { "title": "Interior Design", "desc": "Creative concepts and 3D visualizations that bring your vision to life" },
+    "renovation": { "title": "Renovation", "desc": "Full apartment renovation from structure to final finishes" },
+    "consultation": { "title": "Consultation", "desc": "Expert guidance on materials, colors, and design strategies" },
+    "handover": { "title": "Key in Hand", "desc": "Complete project delivery — we handle everything for you" }
+  },
+  "projects_preview": {
+    "title": "Our Recent Works",
+    "subtitle": "Discover our portfolio of stunning interior transformations",
+    "view_all": "View All Projects"
+  },
+  "stats": {
+    "title": "Numbers That Speak",
+    "projects": "Projects Completed",
+    "clients": "Happy Clients",
+    "years": "Years Experience",
+    "team": "Team Members",
+    "heading": "Our Impact in Numbers",
+    "desc": "Every project we complete reflects our commitment to excellence, quality, and client satisfaction.",
+    "learn_btn": "Learn About Us"
+  },
+  "cta_section": {
+    "title": "Ready to Transform Your Space?",
+    "subtitle": "Let's create your dream interior together. Get a free consultation today.",
+    "button": "Schedule a Consultation",
+    "badge": "Free Initial Consultation",
+    "call_label": "Call Us Now",
+    "features_title": "Why Choose Us?",
+    "features_sub": "Deserve Design promise",
+    "feat_1": "Free initial consultation session",
+    "feat_2": "Premium-grade materials & finishes",
+    "feat_3": "Experienced certified design team",
+    "feat_4": "On-time project delivery",
+    "feat_5": "Full post-delivery support",
+    "feat_badge": "100+ Completed Projects"
+  },
+  "works": {
+    "title": "Our Portfolio",
+    "subtitle": "Every project tells a story of transformation and excellence",
+    "filter_all": "All",
+    "filter_modern": "Modern",
+    "filter_luxury": "Luxury",
+    "filter_contemporary": "Contemporary",
+    "filter_commercial": "Commercial",
+    "filter_apartments": "Apartments",
+    "view_details": "View Details",
+    "close": "Close",
+    "image_of": "of"
+  },
+  "service": {
+    "title": "Our Complete Service",
+    "subtitle": "We take your ordinary apartment from any location and transform it into your dream design — from concept to final delivery with the key in your hand.",
+    "process_title": "Our 6-Step Process",
+    "process_subtitle": "A proven methodology that delivers stunning results every time",
+    "benefits_title": "Why Choose Deserve Design?",
+    "benefits_subtitle": "We combine creativity, expertise, and commitment to deliver exceptional results",
+    "cta_title": "Start Your Project Today",
+    "cta_subtitle": "Get a free consultation and let us bring your vision to life",
+    "cta_button": "Get Free Consultation",
+    "steps": {
+      "s1": { "title": "Consultation", "desc": "Free initial meeting to understand your vision, lifestyle needs, and budget. Site inspection and precise measurements." },
+      "s2": { "title": "Design Concept", "desc": "Professional 3D visualizations with multiple design options. Your feedback shapes the final concept." },
+      "s3": { "title": "Material Selection", "desc": "Premium materials and finishes selected to match your style and budget. Expert color coordination." },
+      "s4": { "title": "Project Planning", "desc": "Detailed timeline, budget breakdown, and team assignment. You approve every detail before we begin." },
+      "s5": { "title": "Execution", "desc": "Expert contractors and technicians at work. Quality supervision at every stage with regular progress updates." },
+      "s6": { "title": "Final Delivery", "desc": "Complete inspection, final touches, and thorough cleanup. Your dream space handed over key in hand." }
+    },
+    "benefits": {
+      "b1": { "title": "Premium Quality", "desc": "Best materials and expert craftsmanship in every project" },
+      "b2": { "title": "Best Prices", "desc": "Competitive rates without ever compromising on quality" },
+      "b3": { "title": "Full Team", "desc": "Integrated engineers and skilled technicians under one roof" },
+      "b4": { "title": "Professional Supervision", "desc": "Quality control and oversight at every single stage" },
+      "b5": { "title": "Complete Solution", "desc": "From first concept sketch to final key handover" },
+      "b6": { "title": "Client First", "desc": "Your satisfaction and comfort are our top priority" }
+    }
+  },
+  "about": {
+    "title": "About Deserve Design",
+    "tagline": "You will find what you want with DESERVE — as you deserve",
+    "story_title": "Our Story",
+    "story": "We believe every space tells a story. Our mission is to transform ordinary apartments into extraordinary homes that reflect the personality and lifestyle of our clients. Founded by Eng. Ahmed Elfeky, Deserve Design has become a trusted name in premium interior design and renovation in Egypt.",
+    "diff_title": "What Makes Us Different",
+    "values_title": "Our Core Values",
+    "team_title": "Meet Our Team",
+    "team_subtitle": "Talented professionals dedicated to your dream space",
+    "stats_title": "Our Achievements",
+    "differences": {
+      "d1": { "title": "Complete Service", "desc": "We handle everything from design concept to final key handover" },
+      "d2": { "title": "Expert Team", "desc": "Integrated engineers and experienced technicians at the highest level" },
+      "d3": { "title": "Quality & Value", "desc": "Premium designs at the most competitive prices" },
+      "d4": { "title": "Client Focused", "desc": "Your satisfaction and happiness is our ultimate goal" }
+    },
+    
+    "values": {
+      "v1": { "title": "Excellence", "desc": "Highest standards in every design and execution detail" },
+      "v2": { "title": "Integrity", "desc": "Honest communication and fully transparent pricing" },
+      "v3": { "title": "Innovation", "desc": "Modern designs using the latest techniques and materials" },
+      "v4": { "title": "Satisfaction", "desc": "Your dream space is our mission and our pride" }
+    },
+    "team": {
+      "designer": { "name": "Eng. Ahmed Elfeky", "role": "Founder & Lead Designer", "desc": "Visionary designer with years of experience creating stunning interiors" },
+      "architect": { "name": "Lead Architect", "role": "Senior Architect", "desc": "Expert in space planning, structural design, and 3D visualization" },
+      "supervisor": { "name": "Site Supervisor", "role": "Construction Supervisor", "desc": "Ensures quality execution and adherence to design specifications" },
+      "coordinator": { "name": "Project Coordinator", "role": "Client Relations", "desc": "Your dedicated point of contact throughout the entire project" }
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Ready to start your dream project? We'd love to hear from you.",
+    "info_title": "Contact Information",
+    "address": "Cairo, Egypt",
+    "phone": "+20 XXX XXX XXXX",
+    "email": "momayar920@gmail.com",
+    "hours": "Sat–Thu: 9:00 AM – 6:00 PM",
+    "form_title": "Send Us a Message",
+    "form": {
+      "name": "Full Name",
+      "name_placeholder": "Enter your full name",
+      "email": "Email Address",
+      "email_placeholder": "Enter your email",
+      "phone": "Phone Number",
+      "phone_placeholder": "Enter your phone number",
+      "project_type": "Project Type",
+      "project_types": {
+        "apartment": "Apartment",
+        "villa": "Villa",
+        "office": "Office",
+        "other": "Other"
+      },
+      "description": "Project Description",
+      "description_placeholder": "Tell us about your project...",
+      "date": "Preferred Consultation Date",
+      "message": "Additional Message",
+      "message_placeholder": "Any additional details...",
+      "agree": "I agree to be contacted by Deserve Design",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success_title": "Message Sent!",
+      "success_msg": "Thank you! We'll contact you within 24 hours.",
+      "error_msg": "Something went wrong. Please try again or contact us directly.",
+      "required": "This field is required",
+      "invalid_email": "Please enter a valid email",
+      "invalid_phone": "Please enter a valid phone number"
+    }
+  },
+  "footer": {
+    "tagline": "As you deserve",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact Info",
+    "follow_us": "Follow Us",
+    "rights": "All rights reserved",
+    "made_with": "Made with ❤ in Egypt"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "back": "Back",
+    "next": "Next",
+    "prev": "Previous",
+    "close": "Close",
+    "see_more": "See More"
+  }
+}

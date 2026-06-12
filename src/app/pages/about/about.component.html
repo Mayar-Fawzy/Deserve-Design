@@ -1,0 +1,165 @@
+<div class="about-page page-enter">
+
+  <!-- ── Hero ── -->
+  <section class="about-hero">
+    <div class="hero-bg-img">
+      <img src="asserts/project-1/Screenshot 2026-06-12 191300.png" alt="About Deserve Design" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container-custom hero-inner" data-aos="fade-up">
+      <div class="about-badge">
+        <span class="badge-dot"></span>
+        {{ 'about.title' | translate }}
+      </div>
+      <h1 class="hero-tagline">"{{ 'about.tagline' | translate }}"</h1>
+      <div class="accent-line"></div>
+      <p class="hero-sub">Founded by Eng. Ahmed Elfeky — premium interior design and renovation in Cairo, Egypt since 2014.</p>
+      <div class="about-hero-creds">
+        <div class="cred-item">
+          <span class="cred-num">10+</span>
+          <span class="cred-lbl">Years of Excellence</span>
+        </div>
+        <div class="cred-sep"></div>
+        <div class="cred-item">
+          <span class="cred-num">100+</span>
+          <span class="cred-lbl">Projects Delivered</span>
+        </div>
+        <div class="cred-sep"></div>
+        <div class="cred-item">
+          <span class="cred-num">80+</span>
+          <span class="cred-lbl">Satisfied Clients</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Story + Image ── -->
+  <section class="section story-section">
+    <div class="container-custom story-grid">
+      <div class="story-images" data-aos="fade-right">
+        <div class="story-img-main">
+          <img src="asserts/project-4/537988834_774877434904750_3255524384328229436_n.jpg" alt="Deserve Design Work" loading="lazy" />
+        </div>
+        <div class="story-img-accent">
+          <img src="asserts/project-1/Screenshot 2026-06-12 191300.png" alt="Deserve Design Interior" loading="lazy" />
+        </div>
+        <div class="story-badge">
+          <span class="badge-num">10+</span>
+          <span class="badge-label">Years of Excellence</span>
+        </div>
+      </div>
+
+      <div class="story-text" data-aos="fade-left">
+        <p class="label-text">{{ 'about.story_title' | translate }}</p>
+        <h2 class="section-title">{{ 'about.title' | translate }}</h2>
+        <div class="accent-line"></div>
+        <p class="story-body">{{ 'about.story' | translate }}</p>
+
+        <div class="diff-grid">
+          @for (d of differences; track d.key; let i = $index) {
+            <div class="diff-item" data-aos="fade-up" [attr.data-aos-delay]="i * 80">
+              <div class="diff-icon">{{ d.icon }}</div>
+              <div>
+                <h4 class="diff-title">{{ d.key + '.title' | translate }}</h4>
+                <p class="diff-desc">{{ d.key + '.desc' | translate }}</p>
+              </div>
+            </div>
+          }
+        </div>
+
+        <a routerLink="/contact" class="btn-primary" style="margin-top: 32px">
+          {{ 'cta_section.button' | translate }}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats ── -->
+  <section class="about-stats-section section">
+    <div class="container-custom">
+      <div class="stats-row">
+        @for (stat of displayedStats; track stat.key; let i = $index) {
+          <div class="stat-item" data-aos="zoom-in" [attr.data-aos-delay]="i * 80">
+            <div class="stat-val">{{ stat.value }}{{ stat.suffix }}</div>
+            <div class="stat-lbl">{{ stat.key | translate }}</div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Values ── -->
+  <section class="section values-section" style="background: var(--light-secondary)">
+    <div class="container-custom">
+      <div class="section-header text-center" data-aos="fade-up">
+        <p class="label-text">{{ 'about.values_title' | translate }}</p>
+        <h2 class="section-title">{{ 'about.values_title' | translate }}</h2>
+        <div class="accent-line mx-auto"></div>
+      </div>
+
+      <div class="values-grid">
+        @for (v of values; track v.key; let i = $index) {
+          <div class="value-card card" data-aos="fade-up" [attr.data-aos-delay]="i * 80">
+            <div class="value-icon">{{ v.icon }}</div>
+            <h3 class="value-title">{{ v.key + '.title' | translate }}</h3>
+            <p class="value-desc">{{ v.key + '.desc' | translate }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Team ── -->
+  <section class="section team-section">
+    <div class="container-custom">
+      <div class="section-header text-center" data-aos="fade-up">
+        <p class="label-text">{{ 'about.team_title' | translate }}</p>
+        <h2 class="section-title">{{ 'about.team_subtitle' | translate }}</h2>
+        <div class="accent-line mx-auto"></div>
+      </div>
+
+      <div class="team-grid">
+        <!-- Lead Designer -->
+        <div class="team-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="team-avatar team-avatar-lead">
+            <img src="asserts/logo.png" alt="Eng. Ahmed Elfeky" />
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">{{ 'about.team.designer.name' | translate }}</h3>
+            <p class="team-role">{{ 'about.team.designer.role' | translate }}</p>
+            <p class="team-desc">{{ 'about.team.designer.desc' | translate }}</p>
+          </div>
+        </div>
+
+        @for (member of ['architect','supervisor','coordinator']; track member; let i = $index) {
+          <div class="team-card" data-aos="fade-up" [attr.data-aos-delay]="(i+1) * 100">
+            <div class="team-avatar">
+              <div class="avatar-placeholder">{{ ('about.team.' + member + '.name' | translate).charAt(0) }}</div>
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">{{ 'about.team.' + member + '.name' | translate }}</h3>
+              <p class="team-role">{{ 'about.team.' + member + '.role' | translate }}</p>
+              <p class="team-desc">{{ 'about.team.' + member + '.desc' | translate }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section about-cta" style="background: #1A1A1A">
+    <div class="container-custom" data-aos="fade-up" style="text-align:center">
+      <h2 style="color:#fff; font-size:clamp(1.75rem,3vw,2.25rem); font-weight:800; margin-bottom:16px">
+        {{ 'cta_section.title' | translate }}
+      </h2>
+      <p style="color:rgba(255,255,255,0.7); font-size:1rem; margin-bottom:32px">
+        {{ 'cta_section.subtitle' | translate }}
+      </p>
+      <a routerLink="/contact" class="btn-primary" style="font-size:1rem; padding:14px 36px">
+        {{ 'cta_section.button' | translate }}
+      </a>
+    </div>
+  </section>
+
+</div>

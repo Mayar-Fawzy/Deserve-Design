@@ -1,0 +1,179 @@
+<div class="works-page page-enter">
+
+  <!-- ── Page Hero ── -->
+  <section class="page-hero">
+    <div class="hero-bg-img">
+      <img src="asserts/Project-3/Screenshot 2026-06-12 191141.png" alt="Deserve Design Portfolio" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container-custom hero-inner">
+      <div class="hero-content" data-aos="fade-up">
+        <div class="hero-badge-pill">
+          <span class="badge-dot"></span>
+          {{ 'works.title' | translate }}
+        </div>
+        <h1 class="hero-heading">{{ 'works.subtitle' | translate }}</h1>
+        <div class="accent-line"></div>
+        <p class="hero-sub">Browse our complete portfolio — from modern residences to luxury commercial spaces, each project crafted with precision and passion.</p>
+      </div>
+      <div class="hero-stats-row" data-aos="fade-up" data-aos-delay="200">
+        <div class="hero-stat-item">
+          <div class="hs-num">100+</div>
+          <div class="hs-lbl">Projects Done</div>
+        </div>
+        <div class="hs-divider"></div>
+        <div class="hero-stat-item">
+          <div class="hs-num">5</div>
+          <div class="hs-lbl">Style Categories</div>
+        </div>
+        <div class="hs-divider"></div>
+        <div class="hero-stat-item">
+          <div class="hs-num">80+</div>
+          <div class="hs-lbl">Happy Clients</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <section class="filter-section" data-aos="fade-up">
+    <div class="container-custom">
+      <div class="filters">
+        @for (f of filters; track f.key) {
+          <button
+            class="filter-btn"
+            [class.active]="activeFilter() === f.key"
+            (click)="setFilter(f.key)"
+          >
+            {{ f.label | translate }}
+          </button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-section section">
+    <div class="container-custom">
+      <div class="projects-grid">
+        @for (project of filteredProjects(); track project.id; let i = $index) {
+          <div class="project-card" data-aos="fade-up" [attr.data-aos-delay]="(i % 3) * 100">
+
+            <!-- Image slider (manual) -->
+            <div class="card-images">
+              <div class="main-image-wrap" (click)="openLightbox(project, 0)">
+                <img
+                  [src]="project.images[0]"
+                  [alt]="getName(project)"
+                  class="main-image"
+                  loading="lazy"
+                />
+                <div class="image-overlay">
+                  <button class="zoom-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M6 10h4V6h2v4h4v2h-4v4h-2v-4H6v-2Z"/><path fill-rule="evenodd" d="M2 10a8 8 0 1 1 14.906 4.054l4.02 4.02a1 1 0 0 1-1.414 1.414l-4.02-4.02A8 8 0 0 1 2 10Zm8-6a6 6 0 1 0 0 12A6 6 0 0 0 10 4Z" clip-rule="evenodd"/></svg>
+                    View All Photos
+                  </button>
+                </div>
+                <!-- Image count badge -->
+                @if (project.images.length > 1) {
+                  <div class="image-count">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M2 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Zm2-.5a.5.5 0 0 0-.5.5v5.586l2.293-2.293a1 1 0 0 1 1.414 0L9 9.086l1.293-1.293a1 1 0 0 1 1.414 0L12 8.586V4a.5.5 0 0 0-.5-.5h-7Z" clip-rule="evenodd" /></svg>
+                    {{ project.images.length }}
+                  </div>
+                }
+              </div>
+
+              <!-- Thumbnail strip -->
+              @if (project.images.length > 1) {
+                <div class="thumbnails">
+                  @for (img of project.images.slice(0, 4); track img; let ti = $index) {
+                    <div class="thumb" (click)="openLightbox(project, ti)">
+                      <img [src]="img" [alt]="getName(project) + ' ' + (ti+1)" loading="lazy" />
+                      @if (ti === 3 && project.images.length > 4) {
+                        <div class="thumb-more">+{{ project.images.length - 4 }}</div>
+                      }
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+
+            <!-- Card Info -->
+            <div class="card-body">
+              <div class="card-header-row">
+                <div>
+                  <h3 class="project-name">{{ getName(project) }}</h3>
+                  <p class="project-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="m7.539 14.841.003.003.002.002a.755.755 0 0 0 .912 0l.002-.002.003-.003.012-.009a5.57 5.57 0 0 0 .19-.153 15.588 15.588 0 0 0 2.046-2.082c1.101-1.362 2.291-3.342 2.291-5.597A5 5 0 0 0 3 8c0 2.255 1.19 4.235 2.292 5.597a15.591 15.591 0 0 0 2.046 2.082 8.916 8.916 0 0 0 .19.153l.012.01ZM8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" clip-rule="evenodd" /></svg>
+                    {{ getLocation(project) }}
+                  </p>
+                </div>
+                <span class="style-badge">{{ getStyle(project) }}</span>
+              </div>
+              <p class="project-desc">{{ getDesc(project) }}</p>
+              <button class="view-btn" (click)="openLightbox(project, 0)">
+                {{ 'works.view_details' | translate }}
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ── Lightbox ── -->
+@if (lightboxOpen()) {
+  <div class="lightbox" (click)="closeLightbox()">
+    <div class="lb-backdrop"></div>
+
+    <div class="lb-content" (click)="$event.stopPropagation()">
+      <!-- Close -->
+      <button class="lb-close" (click)="closeLightbox()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg>
+      </button>
+
+      <!-- Image -->
+      <div class="lb-image-wrap">
+        <img [src]="lightboxProject()!.images[lightboxIndex()]" [alt]="getName(lightboxProject()!)" class="lb-image" />
+      </div>
+
+      <!-- Navigation -->
+      @if (lightboxProject()!.images.length > 1) {
+        <button class="lb-nav lb-prev" (click)="prevImage()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" /></svg>
+        </button>
+        <button class="lb-nav lb-next" (click)="nextImage()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg>
+        </button>
+      }
+
+      <!-- Info bar -->
+      <div class="lb-info">
+        <div>
+          <h3 class="lb-title">{{ getName(lightboxProject()!) }}</h3>
+          <p class="lb-location">{{ getLocation(lightboxProject()!) }}</p>
+        </div>
+        @if (lightboxProject()!.images.length > 1) {
+          <span class="lb-counter">{{ lightboxIndex() + 1 }} / {{ lightboxProject()!.images.length }}</span>
+        }
+      </div>
+
+      <!-- Thumbnail strip -->
+      @if (lightboxProject()!.images.length > 1) {
+        <div class="lb-thumbs">
+          @for (img of lightboxProject()!.images; track img; let ti = $index) {
+            <button
+              class="lb-thumb"
+              [class.active]="ti === lightboxIndex()"
+              (click)="lightboxIndex.set(ti)"
+            >
+              <img [src]="img" alt="" loading="lazy" />
+            </button>
+          }
+        </div>
+      }
+    </div>
+  </div>
+}

@@ -1,1 +1,321 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #D91E24;
+  --primary-dark: #B01820;
+  --primary-light: #FF3B42;
+  --dark: #1A1A1A;
+  --dark-secondary: #2C2C2C;
+  --dark-tertiary: #404040;
+  --light: #FFFFFF;
+  --light-secondary: #F8F7F5;
+  --light-tertiary: #F0EFED;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4B5563;
+  --text-muted: #9CA3AF;
+  --border: #E5E7EB;
+  --card-bg: #FFFFFF;
+  --nav-bg: rgba(255,255,255,0.95);
+  --shadow-color: rgba(0,0,0,0.08);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Section theming */
+  --stats-bg: linear-gradient(135deg, #F9F7F5 0%, #F3EFEC 50%, #F9F7F5 100%);
+  --cta-bg: linear-gradient(135deg, #FAF8F6 0%, #F3EDE9 35%, #EDE5E0 65%, #FAF8F6 100%);
+  --contact-section-bg: linear-gradient(160deg, #FFF8F6 0%, #FFEEE9 25%, #FAE5DF 50%, #FFEEE9 75%, #FFF8F6 100%);
+  --section-dot: rgba(217, 30, 36, 0.07);
+}
+
+.dark {
+  --light: #1A1A1A;
+  --light-secondary: #232323;
+  --light-tertiary: #2C2C2C;
+  --text-primary: #F5F5F5;
+  --text-secondary: #D1D5DB;
+  --text-muted: #9CA3AF;
+  --border: #3F3F3F;
+  --card-bg: #252525;
+  --nav-bg: rgba(26,26,26,0.97);
+  --shadow-color: rgba(0,0,0,0.4);
+  /* Section theming — dark overrides */
+  --stats-bg: linear-gradient(135deg, #1A1A1A 0%, #2C1010 50%, #1A1A1A 100%);
+  --cta-bg: linear-gradient(135deg, #0F0F0F 0%, #1A0A0A 40%, #1A1A1A 100%);
+  --contact-section-bg: linear-gradient(160deg, #0A0404 0%, #180808 25%, #200C0C 50%, #180808 75%, #0A0404 100%);
+  --section-dot: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body[dir='rtl'] {
+  font-family: 'Cairo', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--light-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-sm {
+  padding: 60px 0;
+}
+
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+}
+
+.accent-line {
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+  margin: 16px 0 24px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #fff !important;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(217, 30, 36, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(217, 30, 36, 0.45);
+  color: #fff !important;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--primary);
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(217, 30, 36, 0.35);
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: var(--primary);
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-white:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px var(--shadow-color);
+  border-color: rgba(217, 30, 36, 0.2);
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PrimeNG dialog */
+.p-dialog {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+/* PrimeNG inputs */
+.p-inputtext,
+.p-textarea {
+  border-radius: 10px !important;
+  font-family: inherit !important;
+  font-size: 16px !important;
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+  width: 100% !important;
+}
+
+.p-dropdown {
+  border-radius: 10px !important;
+  background: var(--card-bg) !important;
+  border-color: var(--border) !important;
+  width: 100% !important;
+}
+
+.p-inputtext:focus,
+.p-textarea:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(217,30,36,0.15) !important;
+}
+
+/* Carousel indicators */
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background: var(--primary) !important;
+}
+
+/* Page animation */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: pageFadeIn 0.4s ease-out;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  .container-custom {
+    padding: 0 16px;
+  }
+}
+
+/* ── RTL: flip directional arrows ── */
+body[dir='rtl'] .btn-primary svg,
+body[dir='rtl'] .btn-outline svg,
+body[dir='rtl'] .view-all-btn svg,
+body[dir='rtl'] .cta-primary-btn svg,
+body[dir='rtl'] .hero-cta svg,
+body[dir='rtl'] .stats-learn-btn svg,
+body[dir='rtl'] .project-view-btn svg {
+  transform: scaleX(-1);
+}
+
+/* RTL: accent underline on section headings / footer headings */
+body[dir='rtl'] .accent-line {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+body[dir='rtl'] .section-header.text-center .accent-line {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── RTL: footer heading underlines ── */
+body[dir='rtl'] .footer-heading {
+  text-align: right;
+}
+
+body[dir='rtl'] .footer-heading::after {
+  left: auto;
+  right: 0;
+}
+
+body[dir='rtl'] .footer-link::before {
+  content: '←';
+  transform: translateX(8px);
+}
+
+body[dir='rtl'] .footer-link:hover::before {
+  transform: translateX(0);
+}
+
+body[dir='rtl'] .footer-links,
+body[dir='rtl'] .footer-info {
+  text-align: right;
+}
+
+body[dir='rtl'] .footer-info li {
+  flex-direction: row-reverse;
+}
+
+body[dir='rtl'] .footer-logo-wrap {
+  flex-direction: row-reverse;
+}
+
+body[dir='rtl'] .footer-brand-name {
+  align-items: flex-end;
+  text-align: right;
+}

@@ -1,0 +1,79 @@
+<div class="service-page page-enter">
+
+  <!-- ── Page Header ── -->
+  <section class="page-hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="container-custom hero-content" data-aos="fade-up">
+      <p class="label-text">{{ 'service.title' | translate }}</p>
+      <h1 class="hero-title">{{ 'service.subtitle' | translate }}</h1>
+      <div class="accent-line"></div>
+      <a routerLink="/contact" class="btn-primary hero-cta">
+        {{ 'service.cta_button' | translate }}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── 6-Step Process ── -->
+  <section class="section process-section">
+    <div class="container-custom">
+      <div class="section-header text-center" data-aos="fade-up">
+        <p class="label-text">{{ 'service.process_title' | translate }}</p>
+        <h2 class="section-title">{{ 'service.process_subtitle' | translate }}</h2>
+        <div class="accent-line mx-auto"></div>
+      </div>
+
+      <div class="steps-grid">
+        @for (step of steps; track step.num; let i = $index) {
+          <div class="step-card" data-aos="fade-up" [attr.data-aos-delay]="(i % 3) * 100">
+            <div class="step-number">{{ step.num }}</div>
+            <div class="step-icon">{{ step.icon }}</div>
+            <h3 class="step-title">{{ step.key + '.title' | translate }}</h3>
+            <p class="step-desc">{{ step.key + '.desc' | translate }}</p>
+            @if (i < steps.length - 1) {
+              <div class="step-connector"></div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Benefits ── -->
+  <section class="section benefits-section" style="background: var(--light-secondary)">
+    <div class="container-custom">
+      <div class="section-header text-center" data-aos="fade-up">
+        <p class="label-text">{{ 'service.benefits_title' | translate }}</p>
+        <h2 class="section-title">{{ 'service.benefits_subtitle' | translate }}</h2>
+        <div class="accent-line mx-auto"></div>
+      </div>
+
+      <div class="benefits-grid">
+        @for (benefit of benefits; track benefit.key; let i = $index) {
+          <div class="benefit-card card" data-aos="fade-up" [attr.data-aos-delay]="(i % 3) * 80">
+            <div class="benefit-icon">{{ benefit.icon }}</div>
+            <h3 class="benefit-title">{{ benefit.key + '.title' | translate }}</h3>
+            <p class="benefit-desc">{{ benefit.key + '.desc' | translate }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ── -->
+  <section class="cta-banner">
+    <div class="cta-bg-img">
+      <img src="asserts/project-5/469677933_895403349321683_5727812311654359973_n.jpg" alt="" />
+      <div class="cta-overlay"></div>
+    </div>
+    <div class="container-custom cta-content" data-aos="fade-up">
+      <h2 class="cta-title">{{ 'service.cta_title' | translate }}</h2>
+      <p class="cta-sub">{{ 'service.cta_subtitle' | translate }}</p>
+      <a routerLink="/contact" class="btn-white cta-btn">
+        {{ 'service.cta_button' | translate }}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" /></svg>
+      </a>
+    </div>
+  </section>
+
+</div>

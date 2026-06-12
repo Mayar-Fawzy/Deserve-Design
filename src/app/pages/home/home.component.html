@@ -1,0 +1,205 @@
+<div class="home page-enter">
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero-section">
+    <div class="hero-bg">
+      <img src="asserts/project-4/536183983_774877581571402_6968417496406796575_n.jpg" alt="Deserve Design" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content container-custom">
+      <div class="hero-text" data-aos="fade-up">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>{{ 'hero.badge' | translate }}</span>
+        </div>
+        <h1 class="hero-headline">
+          {{ 'hero.headline' | translate }}
+        </h1>
+        <p class="hero-sub">{{ 'hero.subheadline' | translate }}</p>
+        <div class="hero-actions">
+          <a routerLink="/works" class="btn-primary">
+            {{ 'hero.cta_primary' | translate }}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" /></svg>
+          </a>
+          <a routerLink="/contact" class="btn-outline-white">
+            {{ 'hero.cta_secondary' | translate }}
+          </a>
+        </div>
+      </div>
+
+      <!-- Floating stat cards -->
+      <div class="hero-stats" data-aos="fade-left" data-aos-delay="300">
+        <div class="hero-stat-card">
+          <div class="hero-stat-num">100+</div>
+          <div class="hero-stat-label">{{ 'hero.stat_projects' | translate }}</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-num">10+</div>
+          <div class="hero-stat-label">{{ 'hero.stat_years' | translate }}</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-num">80+</div>
+          <div class="hero-stat-label">{{ 'hero.stat_clients' | translate }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- ══════════════ SERVICES PREVIEW ══════════════ -->
+  <section class="section services-section" style="background: var(--light-secondary);">
+    <div class="container-custom">
+      <div class="section-header text-center" data-aos="fade-up">
+        <p class="label-text">{{ 'services_preview.title' | translate }}</p>
+        <h2 class="section-title">{{ 'services_preview.subtitle' | translate }}</h2>
+        <div class="accent-line mx-auto"></div>
+      </div>
+
+      <div class="services-grid">
+        @for (svc of services; track svc.key; let i = $index) {
+          <div class="service-card card" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+            <div class="svc-icon">{{ svc.icon }}</div>
+            <h3 class="svc-title">{{ svc.key + '.title' | translate }}</h3>
+            <p class="svc-desc">{{ svc.key + '.desc' | translate }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ FEATURED PROJECTS ══════════════ -->
+  <section class="section projects-section">
+    <div class="container-custom">
+      <div class="section-header-row" data-aos="fade-up">
+        <div>
+          <p class="label-text">{{ 'projects_preview.title' | translate }}</p>
+          <h2 class="section-title">{{ 'projects_preview.subtitle' | translate }}</h2>
+          <div class="accent-line"></div>
+        </div>
+        <a routerLink="/works" class="view-all-btn">
+          <span>{{ 'projects_preview.view_all' | translate }}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" /></svg>
+        </a>
+      </div>
+
+      <div class="projects-grid">
+        @for (project of featuredProjects; track project.id; let i = $index) {
+          <div class="project-card" data-aos="fade-up" [attr.data-aos-delay]="i * 120">
+            <div class="project-img-wrap">
+              <img [src]="project.images[0]" [alt]="getProjectName(project)" class="project-img" loading="lazy" />
+              <div class="project-overlay">
+                <span class="project-style-badge">{{ getProjectStyle(project) }}</span>
+                <a routerLink="/works" class="project-view-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="18" height="18">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg>
+                  View Project
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-name">{{ getProjectName(project) }}</h3>
+              <p class="project-location">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="m7.539 14.841.003.003.002.002a.755.755 0 0 0 .912 0l.002-.002.003-.003.012-.009a5.57 5.57 0 0 0 .19-.153 15.588 15.588 0 0 0 2.046-2.082c1.101-1.362 2.291-3.342 2.291-5.597A5 5 0 0 0 3 8c0 2.255 1.19 4.235 2.292 5.597a15.591 15.591 0 0 0 2.046 2.082 8.916 8.916 0 0 0 .19.153l.012.01ZM8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" clip-rule="evenodd" /></svg>
+                {{ getProjectLocation(project) }}
+              </p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ STATS ══════════════ -->
+  <section class="stats-section section">
+    <div class="container-custom">
+      <div class="stats-inner" data-aos="fade-up">
+        <div class="stats-text">
+          <p class="label-text stats-label">{{ 'stats.title' | translate }}</p>
+          <h2 class="section-title stats-title">{{ 'stats.heading' | translate }}</h2>
+          <div class="accent-line"></div>
+          <p class="stats-desc">{{ 'stats.desc' | translate }}</p>
+          <a routerLink="/about" class="stats-learn-btn">
+            {{ 'stats.learn_btn' | translate }}
+          </a>
+        </div>
+        <div class="stats-cards">
+          @for (stat of displayedStats; track stat.key; let i = $index) {
+            <div class="stat-card" data-aos="zoom-in" [attr.data-aos-delay]="i * 100">
+              <div class="stat-number">{{ stat.value }}{{ stat.suffix }}</div>
+              <div class="stat-label">{{ stat.key | translate }}</div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CTA ══════════════ -->
+  <section class="cta-section">
+    <div class="cta-glow-1"></div>
+    <div class="cta-glow-2"></div>
+
+    <div class="container-custom cta-grid">
+
+      <!-- Left: text & actions -->
+      <div class="cta-content" data-aos="fade-right">
+        <div class="cta-badge-pill">
+          <span class="cta-pill-dot"></span>
+          <span>{{ 'cta_section.badge' | translate }}</span>
+        </div>
+
+        <h2 class="cta-title">{{ 'cta_section.title' | translate }}</h2>
+        <p class="cta-sub">{{ 'cta_section.subtitle' | translate }}</p>
+
+        <div class="cta-actions">
+          <a routerLink="/contact" class="cta-primary-btn">
+            {{ 'cta_section.button' | translate }}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" /></svg>
+          </a>
+          <a href="tel:01147851458" class="cta-call-btn">
+            <div class="cta-call-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clip-rule="evenodd" /></svg>
+            </div>
+            <div class="cta-call-text">
+              <span class="cta-call-label">{{ 'cta_section.call_label' | translate }}</span>
+              <span class="cta-call-number">011 47851458</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: feature checklist card -->
+      <div class="cta-features-wrap" data-aos="fade-left" data-aos-delay="150">
+        <div class="cta-features-card">
+          <div class="cta-features-header">
+            <div class="cta-feat-icon">🏛️</div>
+            <div>
+              <div class="cta-feat-title">{{ 'cta_section.features_title' | translate }}</div>
+              <div class="cta-feat-sub">{{ 'cta_section.features_sub' | translate }}</div>
+            </div>
+          </div>
+          <ul class="cta-feat-list">
+            <li><span class="cta-check">✓</span> {{ 'cta_section.feat_1' | translate }}</li>
+            <li><span class="cta-check">✓</span> {{ 'cta_section.feat_2' | translate }}</li>
+            <li><span class="cta-check">✓</span> {{ 'cta_section.feat_3' | translate }}</li>
+            <li><span class="cta-check">✓</span> {{ 'cta_section.feat_4' | translate }}</li>
+            <li><span class="cta-check">✓</span> {{ 'cta_section.feat_5' | translate }}</li>
+          </ul>
+          <div class="cta-feat-footer">
+            <div class="cta-feat-badge">{{ 'cta_section.feat_badge' | translate }}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
